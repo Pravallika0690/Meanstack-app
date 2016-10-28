@@ -21,36 +21,29 @@ background: transparent;
 </head>
 <body ng-app="myapp">
 <div class="container" ng-controller="control">
-<form name="form"  role="form" novalidate ng-submit="form.$valid && submit(form)" >
+<form name="form"  role="form"  ng-submit="form.$valid && submit(form)" ng-disabled="form.$invalid || form.fname.length==0 ||
+    form.lname.length==0 || form.address.length==0 || form.state.length==0 || form.city.length==0 || form.zip.length==0 ||
+    form.phonenum.length==0 || form.username.length==0">
 <h1>Login Form</h1>
 <table>
-<tr><th>
-First name:<i class="glyphicon glyphicon-user"></i></th><td><input type="text" class="form-control" ng-model="form.fname" required></input></td></tr>
+<tr><th>First name:<i class="glyphicon glyphicon-user"></i></th><td><input type="text" class="form-control" ng-model="form.fname" required></input></td></tr>
 <tr></tr>
 <tr><th>Last name:<i class="glyphicon glyphicon-user"></i></th><td><input type="text" class="form-control" ng-model="form.lname" required></input></td></tr>
 <tr></tr>
-<tr><th>Address:</th><td> <textarea rows="4" columns="50" class="form-control" ng-model="form.address" required></textarea></td>
+<tr><th>Address:<span class="glyphicon glyphicon-map-marker"></span></th><td> <textarea rows="4" columns="50" class="form-control" ng-model="form.address" required></textarea></td>
 </tr>
 <tr><th>State:</th><td>
 <input type="text" class="form-control" ng-model="form.state" required></input></td></tr>
 <tr><th>City:</th><td>
 <input type="text" class="form-control" ng-model="form.city" required></input></td></tr>
-<!--  <select>
-<option ng-model="Edison">Edison</option>
-<option ng-model="Piscataway">Piscataway</option>
-<option ng-model="New York City">NYC</option>
-<option ng-model="Poughkeepsie">Poughkeepsie</option>
-<option ng-model="Dallas">Dallas</option>
-</select>-->
-<tr><th>Zip: </th><td><input type="number" class="form-control" ng-model="form.zip" required></input></td></tr>
-<tr><th>Phone: </th><td><input type="number" class="form-control" ng-model="form.phonenum" required></input></td></tr>
+<tr><th>Zip:<span class="glyphicon glyphicon-map-marker"></span> </th><td><input type="number" class="form-control" ng-model="form.zip" required></input></td></tr>
+<tr><th>Phone: <span class="glyphicon glyphicon-phone"></span></th><td><input type="number" class="form-control" ng-model="form.phonenum" required></input></td></tr>
 <tr><th>username</th><td><input type="text" class="form-control" ng-model="form.username" required></input>
 </td></tr>
 <tr><th></th><td><button class="btn btn-primary">
 Submit</button></td></tr>
 </table>
 
-{{message}}
 </form>
 </body>
 </html>

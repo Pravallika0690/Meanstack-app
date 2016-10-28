@@ -15,12 +15,12 @@
     <input type="email" class="form-control" id="email" ng-model="form.emailid">
   </div>
   <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password" class="form-control" id="pwd" ng-model ="form.password">
-  </div>
-  <div class="form-group">
     <label for="username">Username:</label>
     <input type="text" class="form-control" id="user" ng-model ="form.username">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd" ng-model ="form.password">
   </div>
   <div class="checkbox">
     <label><input type="checkbox" ng-model="form.chekcbox"> Remember me</label>
@@ -29,7 +29,19 @@
   <input type="button" id="login" value="view" ng-click="view(form)" />
 </form>
  <input type="button" value= "sendemail" ng-click ="mail(form)"/>
-	
-	Students data :{{students_data}}
+	<br/>
+	Students data :
+	<br/>
+{{students_data.firstname}}<br/>
+{{students_data.lastname}}<br/>
+{{students_data.address}}<br/>
+{{students_data.state}}<br/>
+{{students_data.city}}<br/>
+{{students_data.zip}}<br/>
+{{students_data.phonenum}}<br/>
+{{students_data.username}}<br/>
+{{students_data.login_details.emailid}}<br/>
+
+</div>
 </body>
 </html>

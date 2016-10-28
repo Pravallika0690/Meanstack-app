@@ -5,24 +5,9 @@
 var mongoose= require("mongoose");
 var bodyparser=require('body-parser');
 var bcrypt = require('bcrypt-node');
-//var restify= require("restify");
-//var http = require('http');
 var express = require('express');
-//var ecstatic = require('ecstatic');
 var SendGrid = require('sendgrid').SendGrid;
 var app= express();
-
-//var server= restify.createServer({
-//	name: "myapp",
-//	version: "1.0.0"
-//});
-//server.use(restify.acceptParser(server.acceptable));
-//server.use(restify.queryParser());
-//server.use(restify.bodyParser());
-//server.get('/echo/:name', function (req, res, next) {
-//	  res.send(req.params);
-//	  return next();
-//	});
 
 mongoose.connect('mongodb://localhost:27017/mymeanstack');
 app.use(bodyparser.json());
@@ -47,20 +32,11 @@ var login_schema = mongoose.Schema({
 
 var login_model= mongoose.model("logind", login_schema);
 var user_model= mongoose.model("details", user_schema)
-app.get('/login', function(req, res) {
+app.get('/', function(req, res) {
 	res.sendFile(__dirname+"/login.html");
 	
 })
 
-//server.get('/login', loadStaticFile);
-
-//app.use(ecstatic({root:__dirname + "/login.html"}));
-//app.get('/succ', function(req, res) {
-//	res.sendFile(__dirname+"/succ.html");
-//} )
-//app.get('/login', function(req, res) {
-//	res.send('Hello this is my home page. Thanks for visiting!!!');
-//});
 var db = mongoose.connection;
 db.on('error',function(){
 	console.log("db connection failure")
@@ -145,7 +121,6 @@ app.get("/get_details/:id", function(req, res) {
 	console.log("entered get details express");
 	user_model.findOne({"username": (req.params.id)},function(err, data) {
 		res.send(JSON.stringify(data));
-		//console.log("helloo form res" );
 	});
 })
 
@@ -153,7 +128,3 @@ app.listen(8090, function() {
 	console.log('app listening at 8090');
 });
 
-function loadStaticFile(req, res, next) {
-	var filePath= __dirname + "/login.html";
-	console.log("returning"+ filePath);
-}
