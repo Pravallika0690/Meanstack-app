@@ -23,7 +23,7 @@ app.controller("control",["$scope","$http", function($scope, $http) {
 		console.log(obj);
 		if(form.$valid) {
 			
-		$http.post("http://localhost:8090/Meantack-app/application/save_details", obj).then(function(success_resp) {
+		$http.post("https://localhost:8090/Meantack-app/application/save_details", obj).then(function(success_resp) {
 			alert("data saved successfully="+ success_resp.data.flag);
 			window.location.href =("http://localhost:8090/Meanstack-app/application/js/succ.html") ;
 		}, function(err_resp) {
@@ -47,7 +47,7 @@ var hello= angular.module("hello", []);
 		 };
 		 console.log(user_obj);
 		 
-		 $http.post('http://localhost:8090/Meanstack-app/application/login_details', user_obj).then(function(success_rep) {
+		 $http.post('https://localhost:8090/Meanstack-app/application/login_details', user_obj).then(function(success_rep) {
 						alert('Users saved successfully = '+success_rep.data.flag);
 						},
 					function(err_rep) {
@@ -58,7 +58,7 @@ var hello= angular.module("hello", []);
 	
 	
 $scope.view= function(form) {
-	$http.get("http://localhost:8090/Meanstack-app/application/get_details/"+ form.username).then(function(succ_resp) {
+	$http.get("https://localhost:8090/Meanstack-app/application/get_details/"+ form.username).then(function(succ_resp) {
 		console.log("entered get details app");
 		$scope.students_data = succ_resp.data;
 		console.log($scope.students_data);
