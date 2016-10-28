@@ -1,0 +1,31 @@
+{
+  "name": "node_client_project",
+  "version": "1.0.0",
+  "description": "Created with [Nodeclipse](https://github.com/Nodeclipse/nodeclipse-1)\r  ([Eclipse Marketplace](http://marketplace.eclipse.org/content/nodeclipse), [site](http://www.nodeclipse.org))",
+  "main": "express.js",
+  "dependencies": {
+    "ecstatic": "^2.1.0",
+    "express": "^4.14.0",
+    "bcrypt-node": "^0.1.0",
+    "body-parser": "^1.15.2",
+    "node-rest-client": "^2.0.1",
+    "mongoose": "^4.6.1",
+    "mongodb": "^2.2.10",
+    "sendgrid": "^4.4.0",
+    "restify": "^4.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pravallika0690/Meanstack-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pravallika0690/Meanstack-app/issues"
+  },
+  "homepage": "https://github.com/Pravallika0690/Meanstack-app#readme"
+}
