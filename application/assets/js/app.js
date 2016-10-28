@@ -1,7 +1,7 @@
 /**
  * http://usejsdoc.org/
  */
-   //https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js
+  
 (function() {
 var app= angular.module("myapp", ["hello"]);
 app.controller("control",["$scope","$http","$rootScope", function($scope, $http, $rootScope) {
@@ -25,7 +25,7 @@ app.controller("control",["$scope","$http","$rootScope", function($scope, $http,
 			
 		$http.post("http://localhost:8090/save_details", obj).then(function(success_resp) {
 			alert("data saved successfully="+ success_resp.data.flag);
-			window.location.href =("/js/succ.html") ;
+			window.location.href =("http://localhost:8090/Meanstack-app/application/js/succ.html") ;
 		}, function(err_resp) {
 			alert("error happened while saving data"+ err_resp.data.flag);
 		})
