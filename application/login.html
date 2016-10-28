@@ -1,0 +1,49 @@
+<html >
+<head>
+	<title>Angular</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="http://localhost:8090/js/app.js"></script> 
+<style>
+.my-form {
+transition: all linear 0.5s;
+background: transparent;
+}
+/* .my-form.ng-invalid {
+   background: red;
+ }
+ .ng-invalid {
+ border: 1px solid red;
+ } */
+</style>
+</head>
+<body ng-app="myapp">
+<div class="container" ng-controller="control">
+<form name="form"  role="form"  ng-submit="form.$valid && submit(form)" ng-disabled="form.$invalid || form.fname.length==0 ||
+    form.lname.length==0 || form.address.length==0 || form.state.length==0 || form.city.length==0 || form.zip.length==0 ||
+    form.phonenum.length==0 || form.username.length==0">
+<h1>Login Form</h1>
+<table>
+<tr><th>First name:<i class="glyphicon glyphicon-user"></i></th><td><input type="text" class="form-control" ng-model="form.fname" required></input></td></tr>
+<tr></tr>
+<tr><th>Last name:<i class="glyphicon glyphicon-user"></i></th><td><input type="text" class="form-control" ng-model="form.lname" required></input></td></tr>
+<tr></tr>
+<tr><th>Address:<span class="glyphicon glyphicon-map-marker"></span></th><td> <textarea rows="4" columns="50" class="form-control" ng-model="form.address" required></textarea></td>
+</tr>
+<tr><th>State:</th><td>
+<input type="text" class="form-control" ng-model="form.state" required></input></td></tr>
+<tr><th>City:</th><td>
+<input type="text" class="form-control" ng-model="form.city" required></input></td></tr>
+<tr><th>Zip:<span class="glyphicon glyphicon-map-marker"></span> </th><td><input type="number" class="form-control" ng-model="form.zip" required></input></td></tr>
+<tr><th>Phone: <span class="glyphicon glyphicon-phone"></span></th><td><input type="number" class="form-control" ng-model="form.phonenum" required></input></td></tr>
+<tr><th>username</th><td><input type="text" class="form-control" ng-model="form.username" required></input>
+</td></tr>
+<tr><th></th><td><button class="btn btn-primary">
+Submit</button></td></tr>
+</table>
+
+</form>
+</body>
+</html>
